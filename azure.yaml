@@ -1,0 +1,15 @@
+name: the-cat-said-no
+metadata:
+  template: TheCatSaidNo@0.0.1-beta
+services:
+  web:
+    project: .
+    language: py
+    host: containerapp
+    resourceGroup: ${AZURE_RESOURCE_GROUP}
+infra:
+  layers:
+    - name: network
+      path: infra/network
+    - name: main
+      path: infra
