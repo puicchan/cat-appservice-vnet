@@ -1,11 +1,11 @@
-name: the-cat-said-no
+name: cat-appservice-vnet
 metadata:
-  template: TheCatSaidNo@0.0.1-beta
+  template: cat-appservice-vnet@1.0.0
 services:
   web:
     project: .
     language: py
-    host: containerapp
+    host: appservice
     resourceGroup: ${AZURE_RESOURCE_GROUP}
 infra:
   layers:

@@ -23,12 +23,12 @@ resource networkRg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   tags: tags
 }
 
-// NSG for Container Apps subnet
+// NSG for App Service subnet
 module nsg './nsg.bicep' = {
   name: 'nsg-deployment'
   scope: networkRg
   params: {
-    nsgName: '${abbrs.networkNetworkSecurityGroups}${resourceToken}-container-apps'
+    nsgName: '${abbrs.networkNetworkSecurityGroups}${resourceToken}-app-service'
     location: location
     tags: tags
   }
@@ -48,6 +48,6 @@ module vnet './vnet.bicep' = {
 
 output VNET_ID string = vnet.outputs.vnetId
 output VNET_NAME string = vnet.outputs.vnetName
-output CONTAINER_APPS_SUBNET_ID string = vnet.outputs.subnetId
-output CONTAINER_APPS_SUBNET_NAME string = vnet.outputs.subnetName
+output APP_SERVICE_SUBNET_ID string = vnet.outputs.subnetId
+output APP_SERVICE_SUBNET_NAME string = vnet.outputs.subnetName
 output NETWORK_RESOURCE_GROUP_NAME string = networkRg.name

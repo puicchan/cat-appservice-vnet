@@ -18,7 +18,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2023-11-01' = {
 
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2023-11-01' = {
   parent: vnet
-  name: 'container-apps-subnet'
+  name: 'app-service-subnet'
   properties: {
     addressPrefix: '10.0.0.0/23'
     networkSecurityGroup: {
@@ -26,9 +26,9 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2023-11-01' = {
     }
     delegations: [
       {
-        name: 'delegation-to-container-apps'
+        name: 'delegation-to-app-service'
         properties: {
-          serviceName: 'Microsoft.App/environments'
+          serviceName: 'Microsoft.Web/serverFarms'
         }
       }
     ]

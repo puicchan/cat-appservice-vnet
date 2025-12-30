@@ -8,11 +8,8 @@
     "location": {
       "value": "${AZURE_LOCATION}"
     },
-    "webExists": {
-      "value": "${SERVICE_WEB_RESOURCE_EXISTS=false}"
-    },
-    "containerAppsSubnetId": {
-      "value": "${CONTAINER_APPS_SUBNET_ID}"
+    "appServiceSubnetId": {
+      "value": "${APP_SERVICE_SUBNET_ID}"
     }
   }
 }
