@@ -6,7 +6,6 @@ services:
     project: .
     language: py
     host: appservice
-    resourceGroup: ${AZURE_RESOURCE_GROUP}
 infra:
   layers:
     - name: network
